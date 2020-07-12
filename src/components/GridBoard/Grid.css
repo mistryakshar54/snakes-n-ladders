@@ -1,0 +1,25 @@
+.control-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.canvas-items{
+    display: flex;
+}
+
+.yellow{
+    background-color: yellow;
+    color: black;
+}
+.blue{
+    background-color: blue;
+    color: white;
+}
+.orange{
+    background-color: orange;
+    color: wihte;
+}
+.purple{
+    background-color: purple;
+    color: white;
+}
