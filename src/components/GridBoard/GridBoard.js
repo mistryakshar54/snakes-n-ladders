@@ -8,8 +8,7 @@ const canvasRef = React.createRef();
 
 const GridBoard = () => {
     const noOfPlayers = 2; //Only 2 players for now
-    let isGameComplete = false;
-    const colors = ['yellow', 'blue', 'orange', 'purple'];
+    const colors = ["orange", "purple", "yellow", "blue"];
     const [canvasLoaded, setCanvasLoaded] = useState(false);
     const [gridMap, setGridMap] = useState([]);
     const [players, setPlayers] = useState([]);
@@ -174,13 +173,19 @@ const GridBoard = () => {
         </div>
         {gamestarted && (
           <div className="col-12">
-            {players.map((player) => (
-              <div key={`player-${player.id}`}>
-                <span className={`badge ${colors[player.id - 1]}`}>
-                  Player - {player.id}
-                </span>
-              </div>
-            ))}
+            <div className="col-12">
+              <h5>Color Schemes</h5>
+              {players.map((player) => (
+                  <span key={`player-${player.id}`} className={`badge ${colors[player.id - 1]}`}>
+                    Player - {player.id}
+                  </span>
+                
+              ))}
+            </div>
+            <div className="col-12">
+              <span className={`badge blue`}>Snake 🐍</span>
+              <span className={`badge green`}>Ladders 📶</span>
+            </div>
             {diceValue > 0 && <h3>Got a {diceValue}</h3>}
             <h3>{gameMsg}</h3>
             {gameComplete ? (
